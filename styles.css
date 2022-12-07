@@ -1,35 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
 
 :root {
-    --Very-Dark-Magenta: hsl(300, 43%, 22%);
-    --Soft-Pink: hsl(333, 80%, 67%);
     --Dark-Grayish-Magenta: hsl(303, 10%, 53%);
     --Light-Grayish-Magenta: hsl(300, 24%, 96%);
+    --Soft-Pink: hsl(333, 80%, 67%);
+    --Very-Dark-Magenta: hsl(300, 43%, 22%);
     --White: hsl(0, 0%, 100%);
 }
 
 body {
-    background: url(images/bg-pattern-top-mobile.svg), url(images/bg-pattern-bottom-mobile.svg);
+    background-image: url(images/bg-pattern-top-mobile.svg), url(images/bg-pattern-bottom-mobile.svg);
     background-position: top left, bottom right;
-    /* background-repeat: no-repeat; */
     font-family: 'spartan', sans-serif;
     font-size: 15px;
-
 }
 
 .container {
-    margin: 80px auto;
     display: flex;
     flex-direction: column;
+    margin: 80px auto;
 }
 
 p {
     color: var(--Dark-Grayish-Magenta);
-    text-align: center;
-    line-height: 25px;
     font-size: 14px;
     font-weight: 500;
-    margin: 0 28px 0 28px
+    line-height: 25px;
+    margin: 0 28px 0 28px;
+    text-align: center;
 }
 
 h1 {
@@ -37,31 +35,30 @@ h1 {
     font-size: 30px;
     font-weight: 700;
     line-height: 30px;
-    text-align: center;
     margin: 0 64px 30px 64px;
-
+    text-align: center;
 }
 
 .stars {
+    align-items: center;
     background-color: var(--Dark-Grayish-Magenta);
-    /* border: red solid; */
     border-radius: 4px;
-    margin: 8px;
+    color: var(--Very-Dark-Magenta);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 330px;
-    height: 80px;
-    padding: 15px;
     font-weight: 700;
-    color: var(--Very-Dark-Magenta);
+    height: 80px;
+    justify-content: space-between;
+    margin: 8px;
+    max-width: 330px;
+    padding: 15px;
+    width: 100%;
 }
 
 .container-stars {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin-bottom: 30px;
 }
 
@@ -75,25 +72,27 @@ h1 {
 }
 
 .container-cards {
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
 }
 
+/* TODO: change this to singular */
 .cards {
     background-color: var(--Very-Dark-Magenta);
     border-radius: 10px;
-    max-width: 330px;
-    height: 250px;
-    padding: 37px;
-    margin: 16px 24px 0px 24px;
     color: var(--White);
-    font-size: 12px;
     display: grid;
+    font-size: 12px;
     grid-template-columns: 1fr 10fr;
+    height: 250px;
+    margin: 16px 24px 0px 24px;
+    max-width: 330px;
+    padding: 37px;
 }
 
+/* TODO: change this to singular */
 .cards img {
     border-radius: 50%;
     grid-column: 1 / 2;
@@ -102,28 +101,31 @@ h1 {
     width: 50px;
 }
 
+/* TODO: change this to singular */
 .cards .name {
     font-weight: 700;
     grid-column: 2 / 3;
 }
 
+/* TODO: change this to singular */
 .cards .status {
     color: var(--Soft-Pink);
     grid-column: 2 / 3;
 }
 
+/* TODO: change this to singular */
+/* TODO: use a class instead of p */
 .cards p {
-    font-weight: 500;
-    line-height: 20px;
-    grid-column: 1 / 3;
-    margin-top: 30px;
     color: var(--Light-Grayish-Magenta);
+    font-weight: 500;
+    grid-column: 1 / 3;
+    line-height: 20px;
+    margin-top: 30px;
 }
 
 @media only screen and (min-width: 1024px) {
-
     body {
-        background: url(images/bg-pattern-top-desktop.svg), url(images/bg-pattern-bottom-desktop.svg);
+        background-image: url(images/bg-pattern-top-desktop.svg), url(images/bg-pattern-bottom-desktop.svg);
         background-position: top left, bottom right;
         background-repeat: no-repeat;
         background-size: 400px;
@@ -142,35 +144,29 @@ h1 {
         margin-left: calc(var(--counter) * calc(30% / var(--total)));
     }
 
-    /* .stars-one {
-        align-self: flex-start;
-    }
-
-    .stars-three {
-        align-self: flex-end;
-    } */
-
     .card-one {
         align-self: flex-start;
     }
 
     .card-three {
         align-self: flex-end;
-        /* grid-column: 1 / 3;
-        grid-row: 2 / 3;
-        justify-self: center; */
     }
 
     .stars {
         flex-direction: row;
-        width: 444px;
         height: 50px;
         justify-content: center;
+        max-width: 444px;
     }
 
     .container-cards {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        align-items: flex-start;
+        flex-direction: row;
         grid-column-end: span 2;
+    }
+
+    /* TODO: change this to singular */
+    .cards {
+        margin-top: calc(var(--counter) * calc(10% / var(--total)));
     }
 }
